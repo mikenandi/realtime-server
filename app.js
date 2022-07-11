@@ -18,7 +18,7 @@ const io = new Server(server, {
 	},
 });
 
-const port = 4000;
+const PORT = process.env.PORT || 4000;
 
 io.on("connection", (socket) => {
 	console.log(new Date().toString(), "- New connection detected ");
@@ -76,10 +76,10 @@ io.on("connection", (socket) => {
 	});
 });
 
-server.listen(port, () => {
+server.listen(PORT, () => {
 	console.log(
 		"::  SERVER IS RUNNING @PORT: ",
-		port,
+		PORT,
 		":: time ::",
 		new Date().toString(),
 		"::",
